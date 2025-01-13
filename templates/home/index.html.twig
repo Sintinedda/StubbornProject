@@ -1,20 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Page d'acceuil du site web Stubborn{% endblock %}
+
+{% block stylesheets %}
+    {{ parent () }}
+    <link href="{{ asset('css/home.css') }}" rel="stylesheet"/>
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+{% block main %}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/xampp/htdocs/StubbornProject/src/Controller/HomeController.php</code></li>
-        <li>Your template at <code>C:/xampp/htdocs/StubbornProject/templates/home/index.html.twig</code></li>
-    </ul>
-</div>
+    <h1 class="home-title">Les sweat-shirts du moment !!!</h1>
+    <div class="row align-items-center text-center cards-container">
+        {% for topSweat in topSweats %}
+            <div class="col-sm-12 col-md-6 col-lg-4 card-sweat">
+                <img class="top-sweat-img" src="{{ asset('/uploads/images/' ~ topSweat.img) }}" alt="Sweat du moment"/>
+                <p class="top-sweat-name">{{ topSweat.name }}</p>
+                <p class="top-sweat-price"><strong>Prix : </strong>{{ topSweat.price }} $</p>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
+
 {% endblock %}
