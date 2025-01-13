@@ -1,0 +1,40 @@
+.cards-container {
+    margin: 20px;
+    padding-bottom: 30px;
+}
+
+.card-sweat {
+    border: solid 2px black;
+}
+
+.top-sweat-img {
+    width: 100%;
+    padding: 20px 10px;
+}
+
+.top-sweat-name {
+    font-size: 4vw;
+    font-weight: 500;
+}
+
+.top-sweat-price {
+    font-size: 3vw;
+}
+
+.top-sweat-name,
+.top-sweat-price {
+    text-align: start;
+    margin-left: 30px;
+}
+
+@media screen and (min-width:992px) {
+    
+    .top-sweat-name {
+        font-size: 3vw;
+    }
+
+    .top-sweat-price {
+        font-size: 2.2vw;
+    }
+
+}
